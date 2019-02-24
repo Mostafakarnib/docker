@@ -1,0 +1,14 @@
+remote_theme: ISSAE/architect
+
+name: Portail ISSAE Cnam Liban des cours traveaux et projets
+
+author: Mustafa Karnib
+
+author_email: mustapha.karnib@isae.edu.lb
+
+title: Présentation de Docker 
+
+google_analytics: 
+
+plugins:
+  - jekyll-sitemap
