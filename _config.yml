@@ -11,4 +11,5 @@ title: Présentation de Docker
 google_analytics: 
 
 plugins:
-  - jekyll-sitemap
+   - jekyll-sitemap
+   - jekyll-seo-tag
