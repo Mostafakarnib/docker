@@ -37,19 +37,19 @@ Les éléments suivants sont utilisés par les applications formant le projet do
 Toute la procédure de portage des applications utilisant docker repose uniquement sur l'exécution des conteneurs. Les conteneurs Docker sont essentiellement des répertoires qui peuvent être empaquetés (par exemple archivés par tar) comme tous les autres, puis partagés et exécutés sur différentes machines et plates-formes (hôtes). La seule dépendance est d'avoir les hôtes à l'écoute pour exécuter les conteneurs (c'est-à-dire que le docker est installé). Le confinement est ici obtenu via Linux Containers (LXC).
 
 ### Les conteneurs docker ?
-Les conteneurs Docker ont plusieurs caractéristiques principales. Ils permettent :
-    -La portabilité d’applications
-    -L’isolation de processus
-    -Prévention de modification venant de l’extérieur
-    -La gestion de l’utilisation des ressources
-En plus, ils nécessitent beaucoup moins de ressources que les machines virtuelles traditionnelles utilisées pour le déploiement d’applications isolés. Ils ne permettent pas :
-    -Le mélange avec d’autre processus
-    -L’éxecution sur des systems d’exploitations différents
-    -La vulnérabilité aux attaques et l’utilisation abusives des ressources du système hôte.
-Étant basé et dépendant de LXC, d'un point de vue technique, ces conteneurs sont comme un répertoire (vide et formaté). Cela permet la portabilité et la construction progressive des conteneurs.
-Chaque conteneur est superposé comme un oignon et chaque action prise dans un conteneur consiste à placer un autre bloc (qui se traduit en fait par un simple changement dans le système de fichiers) en plus du précédent. Et divers outils et configurations font que cette configuration fonctionne de manière harmonieuse (par exemple, système de fichiers union).
-La disposition des conteneurs suivant cette architecture permet de démarrer et de créer facilement de nouveaux conteneurs et images. Ces conteneurs et images sont ainsi maintenus en étant légers (grâce à la manière graduelle et stratifiée sur lesquelles se base leurs créations). Puisque tout est basé sur le système de fichiers, prendre des images et effectuer des roll-backs dans le temps est moins couteux (c'est-à-dire très facile / pas lourd sur les ressources), tout comme les systèmes de contrôle de version.
-Chaque conteneur docker commence à partir d’une image docker qui constitue la base pour les autres applications et couches à venir.
+- Les conteneurs Docker ont plusieurs caractéristiques principales. Ils permettent :
+    1. La portabilité d’applications.
+    1. ’isolation de processus.
+    1. Prévention de modification venant de l’extérieur.
+    1. La gestion de l’utilisation des ressources.
+- En plus, ils nécessitent beaucoup moins de ressources que les machines virtuelles traditionnelles utilisées pour le déploiement d’applications isolés. Ils ne permettent pas :
+    1. Le mélange avec d’autre processus
+    1. L’éxecution sur des systems d’exploitations différents
+    1. La vulnérabilité aux attaques et l’utilisation abusives des ressources du système hôte.
+- Étant basé et dépendant de LXC, d'un point de vue technique, ces conteneurs sont comme un répertoire (vide et formaté). Cela permet la portabilité et la construction progressive des conteneurs.
+- Chaque conteneur est superposé comme un oignon et chaque action prise dans un conteneur consiste à placer un autre bloc (qui se traduit en fait par un simple changement dans le système de fichiers) en plus du précédent. Et divers outils et configurations font que cette configuration fonctionne de manière harmonieuse (par exemple, système de fichiers union).
+- La disposition des conteneurs suivant cette architecture permet de démarrer et de créer facilement de nouveaux conteneurs et images. Ces conteneurs et images sont ainsi maintenus en étant légers (grâce à la manière graduelle et stratifiée sur lesquelles se base leurs créations). Puisque tout est basé sur le système de fichiers, prendre des images et effectuer des roll-backs dans le temps est moins couteux (c'est-à-dire très facile / pas lourd sur les ressources), tout comme les systèmes de contrôle de version.
+- Chaque conteneur docker commence à partir d’une image docker qui constitue la base pour les autres applications et couches à venir.
 
 ### Docker Images ?
 
