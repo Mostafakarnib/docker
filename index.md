@@ -23,17 +23,17 @@ description: Présentation de Docker
 
 ### Principaux composants de Docker ?
 
-Le projet Docker (ouvert par dotCloud en mars 2013) se compose de plusieurs parties principales (applications) et éléments (utilisés par ces parties) qui sont tous construits en se basant sur les fonctionnalités, bibliothèques et frameworks déjà existants proposés par le noyau Linux et d’élements externes (par exemple LXC, device-mapper, aufs, etc.).
--Principaux composants de Docker :
+- Le projet Docker (ouvert par dotCloud en mars 2013) se compose de plusieurs parties principales (applications) et éléments (utilisés par ces parties) qui sont tous construits en se basant sur les fonctionnalités, bibliothèques et frameworks déjà existants proposés par le noyau Linux et d’élements externes (par exemple LXC, device-mapper, aufs, etc.).
+- Principaux composants de Docker :
 1.Daemon : utilisé pour gérer les conteneurs docker (LXC) sur l'hôte qu'il exécute
 2.Image index : un référentiel (public ou privé) pour les images docker
 3.CLI : utilisé pour commander et communiquer avec le démon docker 
 4.Containers : répertoires contenant toute votre application.
 5.Images : image de conteneurs ou du système d’exploitation de base (par exemple Ubuntu) .
 6.Dockerfiles : scripts automatisant le processus de création des images.
--Les composants docker :
+- Les composants docker :
 Les éléments suivants sont utilisés par les applications formant le projet docker.
--Containers :
+- Containers :
 Toute la procédure de portage des applications utilisant docker repose uniquement sur l'exécution des conteneurs. Les conteneurs Docker sont essentiellement des répertoires qui peuvent être empaquetés (par exemple archivés par tar) comme tous les autres, puis partagés et exécutés sur différentes machines et plates-formes (hôtes). La seule dépendance est d'avoir les hôtes à l'écoute pour exécuter les conteneurs (c'est-à-dire que le docker est installé). Le confinement est ici obtenu via Linux Containers (LXC).
 
 ### Les conteneurs docker ?
