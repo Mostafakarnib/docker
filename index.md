@@ -78,18 +78,30 @@ sudo apt-get -y upgrade
 ```
 sudo apt-get install linux-image-extra-`uname -r`
 ```
-Ajout du dépôt docker au sources Apt:
-echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" | sudo tee /etc/apt/sources.list.d/docker.list
-Mise à jour des dépôt en prenant en compte les derniers ajouts :
+- Ajout du dépôt docker au sources Apt:
+```
+echo [Link]("deb https://apt.dockerproject.org/repo ubuntu-trusty main" | sudo tee /etc/apt/sources.list.d/docker.list)
+```
+- Mise à jour des dépôt en prenant en compte les derniers ajouts :
+```
 sudo apt-get update
-Pour finir, télechargement et installation de docker :
+```
+- Pour finir, télechargement et installation de docker :
+```
 sudo apt-get install docker-engine
-Le pare-feu par défaut d'Ubuntu (UFW: Uncomplicated Firewall) refuse tout le trafic de transfert par défaut, ce qui est nécessaire pour le docker. Activer le transfert avec UFW: Mise à jour de la configuration UFW avec l’éditeur de texte nano.
+```
+- Le pare-feu par défaut d'Ubuntu (UFW: Uncomplicated Firewall) refuse tout le trafic de transfert par défaut, ce qui est nécessaire pour le docker. Activer le transfert avec UFW: Mise à jour de la configuration UFW avec l’éditeur de texte nano.
+```
 sudo nano /etc/default/ufw
-Descendez et trouvez la ligne commençant par DEFAULTFORWARDPOLICY. Remplacer:
+```
+- Descendez et trouvez la ligne commençant par DEFAULTFORWARDPOLICY. Remplacer:
+```
 DEFAULT_FORWARD_POLICY="DROP"
+```
 Par
+```
 DEFAULT_FORWARD_POLICY="ACCEPT"
+```
 
 Appuyez CTRL+X et valider avec Y pour sauvegarder et fermer. Pour finir, redémarrez UFW:
 sudo ufw reload
