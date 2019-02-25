@@ -25,12 +25,12 @@ description: Présentation de Docker
 
 - Le projet Docker (ouvert par dotCloud en mars 2013) se compose de plusieurs parties principales (applications) et éléments (utilisés par ces parties) qui sont tous construits en se basant sur les fonctionnalités, bibliothèques et frameworks déjà existants proposés par le noyau Linux et d’élements externes (par exemple LXC, device-mapper, aufs, etc.).
 - Principaux composants de Docker :
-1.Daemon : utilisé pour gérer les conteneurs docker (LXC) sur l'hôte qu'il exécute
-2.Image index : un référentiel (public ou privé) pour les images docker
-3.CLI : utilisé pour commander et communiquer avec le démon docker 
-4.Containers : répertoires contenant toute votre application.
-5.Images : image de conteneurs ou du système d’exploitation de base (par exemple Ubuntu) .
-6.Dockerfiles : scripts automatisant le processus de création des images.
+1. Daemon : utilisé pour gérer les conteneurs docker (LXC) sur l'hôte qu'il exécute
+2. Image index : un référentiel (public ou privé) pour les images docker
+3. CLI : utilisé pour commander et communiquer avec le démon docker 
+4. Containers : répertoires contenant toute votre application.
+5. Images : image de conteneurs ou du système d’exploitation de base (par exemple Ubuntu) .
+6. Dockerfiles : scripts automatisant le processus de création des images.
 - Les composants docker :
 Les éléments suivants sont utilisés par les applications formant le projet docker.
 - Containers :
