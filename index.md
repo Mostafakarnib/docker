@@ -53,21 +53,22 @@ Toute la procédure de portage des applications utilisant docker repose uniqueme
 
 ### Docker Images ?
 
-Les images Docker constituent la base des conteneurs dockers à partir desquels tout commence à se former. Ils sont très similaires aux images de disque du système d'exploitation par défaut qui sont utilisées pour exécuter des applications sur des serveurs ou des ordinateurs de bureau.
-Ces images (par exemple, la base Ubuntu) permettent une portabilité transparente sur tous les systèmes. Ils constituent une base solide, cohérente et fiable avec tout ce qui est nécessaire pour exécuter les applications. Lorsque tout est autonome et que le risque de mises à jour ou de modifications au niveau du système est éliminé, le conteneur devient immunisé contre les expositions externes qui pourraient le mettre hors service - empêchant ainsi les soucis de dépendances.
-Au fur et à mesure que d'autres couches (outils, applications, etc.) sont ajoutées sur la base, de nouvelles images peuvent être formées en validant ces changements. Lorsqu'un nouveau conteneur est créé à partir d'une image enregistrée (c'est-à-dire validée), les choses continuent là où elles se sont arrêtées. Et le système de fichiers union réunit toutes les couches en une seule entité lorsque vous travaillez avec un conteneur.
-Ces images de base peuvent être explicitement indiquées lorsque vous travaillez avec la CLI docker pour créer directement un nouveau conteneur ou elles peuvent être spécifiées dans un Dockerfile pour la création automatique d'images.
+- Les images Docker constituent la base des conteneurs dockers à partir desquels tout commence à se former. Ils sont très similaires aux images de disque du système d'exploitation par défaut qui sont utilisées pour exécuter des applications sur des serveurs ou des ordinateurs de bureau.
+- Ces images (par exemple, la base Ubuntu) permettent une portabilité transparente sur tous les systèmes. Ils constituent une base solide, cohérente et fiable avec tout ce qui est nécessaire pour exécuter les applications. Lorsque tout est autonome et que le risque de mises à jour ou de modifications au niveau du système est éliminé, le conteneur devient immunisé contre les expositions externes qui pourraient le mettre hors service - empêchant ainsi les soucis de dépendances.
+- Au fur et à mesure que d'autres couches (outils, applications, etc.) sont ajoutées sur la base, de nouvelles images peuvent être formées en validant ces changements. Lorsqu'un nouveau conteneur est créé à partir d'une image enregistrée (c'est-à-dire validée), les choses continuent là où elles se sont arrêtées. Et le système de fichiers union réunit toutes les couches en une seule entité lorsque vous travaillez avec un conteneur.
+- Ces images de base peuvent être explicitement indiquées lorsque vous travaillez avec la CLI docker pour créer directement un nouveau conteneur ou elles peuvent être spécifiées dans un Dockerfile pour la création automatique d'images.
 
-### Docker Images ?
+### Dockerfiles ?
 
-Dockerfiles sont des scripts contenant une série successive d'instructions, de directions et de commandes qui doivent être exécutées pour former une nouvelle image docker. Chaque commande exécutée se traduit par une nouvelle couche de l'oignon, formant le produit final. Ils remplacent essentiellement le processus de tout faire manuellement et à plusieurs reprises. Quand un Dockerfiles a fini d'être exécuté, vous finissez par avoir une image formée, que vous utilisez ensuite pour commencer (c'est-à-dire créer) un nouveau conteneur.
+- Dockerfiles sont des scripts contenant une série successive d'instructions, de directions et de commandes qui doivent être exécutées pour former une nouvelle image docker. Chaque commande exécutée se traduit par une nouvelle couche de l'oignon, formant le produit final. Ils remplacent essentiellement le processus de tout faire manuellement et à plusieurs reprises. Quand un Dockerfiles a fini d'être exécuté, vous finissez par avoir une image formée, que vous utilisez ensuite pour commencer (c'est-à-dire créer) un nouveau conteneur.
 
 ### Installation de Docker ?
 
-Au début, docker était uniquement disponible sur Ubuntu. De nos jours, il est possible de déployer docker sur les systèmes basés sur RHEL (par exemple CentOS) et d'autres aussi bien.
-Je vais passer au processus d’installation sur un système Linux Ubuntu.
+- Au début, docker était uniquement disponible sur Ubuntu. De nos jours, il est possible de déployer docker sur les systèmes basés sur RHEL (par exemple CentOS) et d'autres aussi bien.
+- Je vais passer au processus d’installation sur un système Linux Ubuntu.
 Installation Instructions for Ubuntu
-Le moyen le plus simple d'obtenir docker, autre que l'utilisation d’une version pré compilé de l’image d’application, est d'utiliser un Ubuntu VPS 64 bits.
+- Le moyen le plus simple d'obtenir docker, autre que l'utilisation d’une version pré compilé de l’image d’application, est d'utiliser un Ubuntu VPS 64 bits.
+```markdown
 Mise à jour des paquets et dépôt :
 sudo apt-get update
 sudo apt-get -y upgrade
