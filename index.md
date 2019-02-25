@@ -68,13 +68,16 @@ Toute la procédure de portage des applications utilisant docker repose uniqueme
 - Je vais passer au processus d’installation sur un système Linux Ubuntu.
 Installation Instructions for Ubuntu
 - Le moyen le plus simple d'obtenir docker, autre que l'utilisation d’une version pré compilé de l’image d’application, est d'utiliser un Ubuntu VPS 64 bits.
+
+- Mise à jour des paquets et dépôt :
 ```
-Mise à jour des paquets et dépôt :
-`sudo apt-get update`
-`sudo apt-get -y upgrade`
-`Code` text
-Vérification du support de l’aufs:
+sudo apt-get update
+sudo apt-get -y upgrade
+```
+- Vérification du support de l’aufs:
+```
 sudo apt-get install linux-image-extra-`uname -r`
+```
 Ajout du dépôt docker au sources Apt:
 echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" | sudo tee /etc/apt/sources.list.d/docker.list
 Mise à jour des dépôt en prenant en compte les derniers ajouts :
@@ -87,7 +90,7 @@ Descendez et trouvez la ligne commençant par DEFAULTFORWARDPOLICY. Remplacer:
 DEFAULT_FORWARD_POLICY="DROP"
 Par
 DEFAULT_FORWARD_POLICY="ACCEPT"
-```
+
 Appuyez CTRL+X et valider avec Y pour sauvegarder et fermer. Pour finir, redémarrez UFW:
 sudo ufw reload
 Une fois docker installé, son utilisation intuitive le rend très facile à utiliser. À ce stade, le processus docker doit être exécuté en arrière-plan. Sinon, utilisez la commande suivante pour exécuter le démon docker. Pour démarer le processus daemon:
