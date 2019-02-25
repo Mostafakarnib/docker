@@ -19,6 +19,8 @@ description: Présentation de Docker
 - Dans le cas de  Docker, le kernel va partager les ressources du système hôte et interagir avec le(s) container(s). Techniquement, Docker n'est pas une VM, pas le moins du monde, mais en terme d'utilisation, Docker peut-être apparenté à une VM.
 - Lancer un environnement, et isoler les composants de ce container avec les composants de mon hôte, voilà ce que Docker sait faire! Il le fait d'ailleurs très bien, et reste une alternative bien plus performante que les VMs (à utilisation équivalente).
 
+![Image](https://github.com/Mostafakarnib/docker/blob/master/docker-containers-vms.png) 
+
 ### Principaux composants de Docker ?
 
 Le projet Docker (ouvert par dotCloud en mars 2013) se compose de plusieurs parties principales (applications) et éléments (utilisés par ces parties) qui sont tous construits en se basant sur les fonctionnalités, bibliothèques et frameworks déjà existants proposés par le noyau Linux et d’élements externes (par exemple LXC, device-mapper, aufs, etc.).
