@@ -160,25 +160,36 @@ wait: Block until a container stops, then print its exit code
 
 ### Commençons par voir toutes les commandes disponibles du docker ?
 
-Pour les informations système conçernant docker :
+- Pour les informations système conçernant docker :
+```
 sudo docker info
-Pour la version de docker :
+```
+- Pour la version de docker :
+```
 sudo docker version
-Travailler avec les images : Comme nous l'avons longuement évoqué, la clé pour commencer à travailler avec n'importe quel conteneur docker est d'utiliser des images. Il y a beaucoup d'images librement disponibles partagées à travers l'index d'image docker et la CLI permet un accès simple pour interroger le référentiel d'images et pour en télécharger de nouvelles. Lorsque vous êtes prêt, vous pouvez également partager votre image. Voir la section sur "partager" plus bas pour plus de détails.
+```
+- Travailler avec les images : Comme nous l'avons longuement évoqué, la clé pour commencer à travailler avec n'importe quel conteneur docker est d'utiliser des images. Il y a beaucoup d'images librement disponibles partagées à travers l'index d'image docker et la CLI permet un accès simple pour interroger le référentiel d'images et pour en télécharger de nouvelles. Lorsque vous êtes prêt, vous pouvez également partager votre image.
 
 ### Travailler avec les images ?
 
-Recherche d’une image docker :
+- Recherche d’une image docker :
+```
 sudo docker search ubuntu
-Cela vous donnera une très longue liste de toutes les images disponibles correspondant à la requête : Ubuntu.
+```
+- Cela vous donnera une très longue liste de toutes les images disponibles correspondant à la requête : Ubuntu.
 Téléchargement (récupération) une image. Soit lorsque vous construisez / créez un conteneur ou, avant de le faire, vous devez avoir une image présente sur la machine hôte où les conteneurs existeront. Afin de télécharger des images (peut-être après "recherche"), vous pouvez exécuter pull pour en obtenir un.
- Utilisation: sudo docker pull [nom]
+ Utilisation:
+ ```
+sudo docker pull [nom]
 sudo docker pull ubuntu
-
-outes les images de votre système, y compris celles que vous avez créées en vous (voir ci-dessous pour plus de détails), peuvent être listées en utilisant "images". Ceci fournit une liste complète de tous ceux disponibles.
-Liste des images :
+```
+-Toutes les images de votre système, y compris celles que vous avez créées en vous (voir ci-dessous pour plus de détails), peuvent être listées en utilisant "images". Ceci fournit une liste complète de tous ceux disponibles.
+- Liste des images :
+```
 sudo docker images
-Ex :
+```
+- Ex :
+```
 REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE
 my_img latest 72461793453e 36 seconds ago 130 MB
 ubuntu 14.04 8dcd1e456a96 8 months ago 130 MB
@@ -186,53 +197,81 @@ ubuntu latest 8dcd9e456a96 8 months ago 130 MB
 ubuntu precise 8dcd9e456a96 8 months ago 130 MB
 ubuntu 14.10 b453fe79269d 8 months ago 215.3 MB
 ubuntu quantal b453fe79269d 8 months ago 215.3 MB
+```
 
 ### Commit les changements concernant une image ?
 
-Lorsque vous travaillez avec un conteneur et continuez à effectuer des actions (par exemple, télécharger et installer un logiciel, configurer des fichiers, etc.), pour qu'il conserve son état, vous devez effectuer un "commit". Le commit permet de s'assurer que tout reprend d'où ils sont partis la prochaine fois que vous en utilisez un (c'est-à-dire une image).
-Utilisation: sudo docker commit [ID] [nom]
+- Lorsque vous travaillez avec un conteneur et continuez à effectuer des actions (par exemple, télécharger et installer un logiciel, configurer des fichiers, etc...), pour qu'il conserve son état, vous devez effectuer un "commit". Le commit permet de s'assurer que tout reprend d'où ils sont partis la prochaine fois que vous en utilisez un (c'est-à-dire une image).
+- Utilisation:
+```
+sudo docker commit [ID] [nom]
 sudo docker commit 8dcd9e456a96 my_img
-Partage d’images (PUSH) : Bien que ce fasse un peu moment que vous avez créé votre propre conteneur que vous aimeriez partager avec le reste du monde, vous pouvez utiliser push pour que votre image soit listée dans l'index où tout le monde peut le télécharger et l’utiliser. Rappelez-vous de “commit” après vos changements.
-utilisation: sudo docker push [username/image name] 
+```
+- Partage d’images (PUSH) : Bien que ce fasse un peu moment que vous avez créé votre propre conteneur que vous aimeriez partager avec le reste du monde, vous pouvez utiliser push pour que votre image soit listée dans l'index où tout le monde peut le télécharger et l’utiliser. Rappelez-vous de “commit” après vos changements.
+- utilisation:
+```
+sudo docker push [username/image name] 
 sudo docker push my_username/my_first_image
+```
 
 ### Travailler avec les Conteneurs ?
 
-Lorsque vous "exécutez" un processus en utilisant une image, en retour, vous aurez un conteneur. Lorsque le processus n'est pas en cours d'exécution, ce conteneur sera un conteneur non-exécutant. Néanmoins, ils resteront tous sur votre système jusqu'à ce que vous les supprimiez via la commande rm.
-Lister tous les conteneurs :
+- Lorsque vous "exécutez" un processus en utilisant une image, en retour, vous aurez un conteneur. Lorsque le processus n'est pas en cours d'exécution, ce conteneur sera un conteneur non-exécutant. Néanmoins, ils resteront tous sur votre système jusqu'à ce que vous les supprimiez via la commande rm.
+- Lister tous les conteneurs :
+```
 sudo docker ps
-Pour avoir une liste complète de tout les processus, use:
+```
+- Pour avoir une liste complète de tout les processus, use:
+```
 sudo docker ps -l 
-Création d’un nouveau conteneur :Il n'est actuellement pas possible de créer un conteneur sans exécuter quoi que ce soit (c'est-à-dire des commandes). Pour créer un nouveau conteneur, vous devez utiliser une image de base et spécifier une commande à exécuter.
+```
+- Création d’un nouveau conteneur: Il n'est actuellement pas possible de créer un conteneur sans exécuter quoi que ce soit (c'est-à-dire des commandes). Pour créer un nouveau conteneur, vous devez utiliser une image de base et spécifier une commande à exécuter.
+```
 sudo docker run my_image echo "test"
-Utilisation: sudo docker run [image] [command]
+```
+- Utilisation: 
+```
+sudo docker run [image] [command]
 sudo docker run my_image echo "test"
- Pour nommer un conteneur au lieu d’avoir un long ID
-Usage: sudo docker run -name [name] [img] [com]
+```
+- Pour nommer un conteneur au lieu d’avoir un long ID
+- Usage: 
+```
+sudo docker run -name [name] [img] [com]
 sudo docker run -name my_cnt my_image echo "test"
-Exécution d’un conteneur :Lorsque vous créez un conteneur et qu'il s'arrête (soit en raison de la fin de son processus, soit en l'arrêtant explicitement), vous pouvez utiliser "run" pour que le conteneur fonctionne à nouveau avec la même commande que celle utilisée pour le créer.
- Utilisation: sudo docker run [ID]
+```
+- Exécution d’un conteneur :Lorsque vous créez un conteneur et qu'il s'arrête (soit en raison de la fin de son processus, soit en l'arrêtant explicitement), vous pouvez utiliser "run" pour que le conteneur fonctionne à nouveau avec la même commande que celle utilisée pour le créer.
+- Utilisation:
+```
+sudo docker run [ID]
 sudo docker run c629b7d70666
-Arrêter un conteneur :
- utilisation: sudo docker stop [ID]
+```
+- Arrêter un conteneur :
+- Utilisation: 
+```
+sudo docker stop [ID]
 sudo docker stop c629b7d70666
-Sauvegarder (commit) un conteneur : Si vous souhaitez enregistrer la progression et les modifications effectuées avec un conteneur, vous pouvez utiliser "commit" comme expliqué ci-dessus pour l'enregistrer en tant qu'image. Cette commande transforme votre conteneur en une image. Rappelez-vous qu'avec docker, les commits sont bon marché. N'hésitez pas à les utiliser pour créer des images pour enregistrer votre progression avec un conteneur ou pour revenir en arrière lorsque vous avez besoin (par exemple, comme des images à temps).
-Suppression d’un conteneur :En utilisant l'identifiant d'un conteneur, vous pouvez en supprimer avec rm.
-Utilisation: sudo docker rm [ID]
+```
+- Sauvegarder (commit) un conteneur : Si vous souhaitez enregistrer la progression et les modifications effectuées avec un conteneur, vous pouvez utiliser "commit" comme expliqué ci-dessus pour l'enregistrer en tant qu'image. Cette commande transforme votre conteneur en une image. Rappelez-vous qu'avec docker, les commits sont bon marché. N'hésitez pas à les utiliser pour créer des images pour enregistrer votre progression avec un conteneur ou pour revenir en arrière lorsque vous avez besoin (par exemple, comme des images à temps).
+- Suppression d’un conteneur :En utilisant l'identifiant d'un conteneur, vous pouvez en supprimer avec rm.
+- Utilisation:
+```
+sudo docker rm [ID]
 sudo docker rm c629b7d70666
+```
 
 ### Les avantages
 
-Dans l’ensemble, en tant que développeur, l’utilisation de conteneurs peut me faciliter la vie.
-Cela facilite le partage d’un même environnement entre devs.
-Les dépendances seront les mêmes peu importe l’environnement. (Je suis sûr d’avoir la même version des outils que mes collègues) ?
-Docker est cross-plateforme : les différences d’OS entre dev ne sont plus un soucis
-Je travaille sur un environnement cloisonné.
-Je dispose de solutions sur étagère grâce aux images open source à disposition.
-Je peux faire des POCs rapides grâce aux images Docker sans polluer ma machine.
-C’est plus rapide à démarrer/arrêter qu’une VM.
-Cela accélère considérablement la boucle de feedback et la livraison en production.
+1. Dans l’ensemble, en tant que développeur, l’utilisation de conteneurs peut me faciliter la vie.
+2. Cela facilite le partage d’un même environnement entre devs.
+3. Les dépendances seront les mêmes peu importe l’environnement. (Je suis sûr d’avoir la même version des outils que mes collègues) ?
+4. Docker est cross-plateforme : les différences d’OS entre dev ne sont plus un soucis
+5. Je travaille sur un environnement cloisonné.
+6. Je dispose de solutions sur étagère grâce aux images open source à disposition.
+7. Je peux faire des POCs rapides grâce aux images Docker sans polluer ma machine.
+8. C’est plus rapide à démarrer/arrêter qu’une VM.
+9. Cela accélère considérablement la boucle de feedback et la livraison en production.
 
 ### Conclusion
 
-Grâce à Docker, multipliez les environnements sur votre machine, sans limiter les performances de votre ordinateur. Les ressources sont partagées avec la machine hôte ! Chaque environnement peut être configuré simplement grâce à son Dockerfile, présent à sa racine.
+- Grâce à Docker, multipliez les environnements sur votre machine, sans limiter les performances de votre ordinateur. Les ressources sont partagées avec la machine hôte ! Chaque environnement peut être configuré simplement grâce à son Dockerfile, présent à sa racine.
