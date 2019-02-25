@@ -72,6 +72,7 @@ Installation Instructions for Ubuntu
 Mise à jour des paquets et dépôt :
 `sudo apt-get update`
 `sudo apt-get -y upgrade`
+`Code` text
 Vérification du support de l’aufs:
 sudo apt-get install linux-image-extra-`uname -r`
 Ajout du dépôt docker au sources Apt:
