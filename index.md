@@ -70,8 +70,8 @@ Installation Instructions for Ubuntu
 - Le moyen le plus simple d'obtenir docker, autre que l'utilisation d’une version pré compilé de l’image d’application, est d'utiliser un Ubuntu VPS 64 bits.
 ```
 Mise à jour des paquets et dépôt :
-sudo apt-get update
-sudo apt-get -y upgrade
+`sudo apt-get update`
+`sudo apt-get -y upgrade`
 Vérification du support de l’aufs:
 sudo apt-get install linux-image-extra-`uname -r`
 Ajout du dépôt docker au sources Apt:
