@@ -158,7 +158,7 @@ version Show the docker version information
 wait: Block until a container stops, then print its exit code
 ```
 
-### Commençons par voir toutes les commandes disponibles du docker ?
+### Consultez les informations du système et la version de docker ?
 
 - Pour les informations système conçernant docker :
 ```
