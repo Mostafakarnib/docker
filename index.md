@@ -3,8 +3,8 @@ titre: Docker
 description: Présentation de Docker
 ---
 ## Introduction
--Les cas d'utilisation fournis sont illimités et le besoin a toujours été là. Docker est là pour vous offrir un moyen efficace et rapide de transférer des applications sur des systèmes et des machines. Il est léger et léger, vous permettant de contenir rapidement des applications et de les exécuter dans leurs propres environnements sécurisés.
--je souhaite vous présenter de manière approfondie Docker : l'un des projets open source les plus passionnants et les plus puissants à avoir vu le jour ces dernières années. Docker peut vous aider tellement qu'il est injuste d'essayer de résumer ses capacités en une phrase.
+- Les cas d'utilisation fournis sont illimités et le besoin a toujours été là. Docker est là pour vous offrir un moyen efficace et rapide de transférer des applications sur des systèmes et des machines. Il est léger et léger, vous permettant de contenir rapidement des applications et de les exécuter dans leurs propres environnements sécurisés.
+- je souhaite vous présenter de manière approfondie Docker : l'un des projets open source les plus passionnants et les plus puissants à avoir vu le jour ces dernières années. Docker peut vous aider tellement qu'il est injuste d'essayer de résumer ses capacités en une phrase.
 
 ## Qu'est-ce que Docker ?
 Docker est un produit développé par la société du même nom. Initialement développé par un ingénieur français, Solomon Hykes, le produit a été dévoilé en mars 2013. Depuis cette date, Docker est devenu LE soft à la mode ! Nous allons voir à quoi il sert et comment vous pouvez vous en servir au quotidien.
